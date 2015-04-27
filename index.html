@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
     <head>
-        <script data-require="jquery@*" data-semver="2.1.3" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <base href="/budgetTheNight/">
+        <link rel="stylesheet" href="styles.css" />
         <link data-require="bootstrap@*" data-semver="3.3.2" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+        <script data-require="jquery@*" data-semver="2.1.3" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
         <script data-require="bootstrap@*" data-semver="3.3.2" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
         <script data-require="angular.js@*" data-semver="1.4.0-beta.6" src="https://code.angularjs.org/1.4.0-beta.6/angular.js"></script>
-        <link rel="stylesheet" href="styles.css" />
+
+        <script type="text/javascript" src="lib/oauth-ng/oauth-ng.js"></script>
+        <script type="text/javascript" src="lib/ngStorage/ngStorage.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+
+        <script type="text/javascript" src="services/uberService.js"></script>
 
     </head>
     <body>
 
+    <oauth
+            site="https://login.uber.com"
+            client-id="xa-qQxLOJqYPIHLp8yT5vpbia-FDdeuJ"
+            redirect-uri="http://localhost:63342/budgetTheNight/"
+            scope="profile request history">
+    </oauth>
+
+
+    <oauth-echo></oauth-echo>
     </body>
 </html>
