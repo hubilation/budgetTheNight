@@ -22,7 +22,12 @@
                 $timeout(function(){
                     vm.logged = uberService.isLoggedIn();
                 }, 0);
-
+                uberService.getMe().then(function(me){
+                    console.log(me);
+                });
+                uberService.getHistory(0,50).then(function(history){
+                    console.log(history);
+                })
             }
         }
     }
